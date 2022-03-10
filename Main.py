@@ -17,6 +17,18 @@ def printResult(board, turn):
     print("---------------------")
     print("*** Player " + turn + " won! ***\n") 
 
+def checkForRestart():
+    restart = input("\nWould you like to play again? (y/n): ")
+    if restart == "y":
+        for i in board:
+            board[i] = ' '
+        game()
+    elif restart == "n":
+        quit()
+    else:
+        checkForRestart()
+
+
 def game():
     counter = 0
     turn = 'X' 
@@ -62,7 +74,7 @@ def game():
         if counter == 9: # It's a tie!
             print("\nGame Over.")
             print("---------------------")
-            print("The game is a tie!")
+            print("*** The game is a tie! ***")
             break 
 
 
@@ -75,5 +87,11 @@ def game():
         
         print("\n")
 
+    checkForRestart()
+        
 
-game()
+
+
+if __name__ == "__main__":
+    game()
+
