@@ -34,9 +34,12 @@ def game():
     turn = 'X' 
 
     # The main game loop
-    for i in range(10):
+    while True:
         printBoard(board)
         move = input("It's you're turn, " + turn + ". Please pick a slot from 1-9: ")
+
+        if move.isnumeric() == False or int(move) > 9: # Checking if the player doesn't enter any proper values
+            continue
 
         if board[move] == ' ': # Checking to see if the selected slot is empty
             board[move] = turn
@@ -44,6 +47,8 @@ def game():
         else:
             print("That slot is already filled. Please try again: ")
             continue
+
+        print(board[move])
 
         # Checking to see if a player has won
         if board['7'] == board['8'] == board['9'] != ' ': # Across the top
