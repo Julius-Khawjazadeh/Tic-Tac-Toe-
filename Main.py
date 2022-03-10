@@ -1,3 +1,5 @@
+print("\nTic Tac Toe console edition in python.\nThis is a simple beginner project I created using purely python.")
+print("---------------------------------------------------------------")
 board = { 
     '7': ' ', '8': ' ', '9': ' ',
     '4': ' ', '5': ' ', '6': ' ',
@@ -93,9 +95,6 @@ def game():
         print("\n")
 
     checkForRestart()
-        
-
-
 
 if __name__ == "__main__":
     game()
